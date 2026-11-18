@@ -108,4 +108,8 @@ From a Python 3.10+ virtual environment, run `<venv>/bin/python -B -m pip instal
 
 The bootstrap records the installation paths and Python executable. Rebind it if those paths change. Keep runtime data outside the release and the Git project under review. The core controller needs no API key and sends nothing to the project maintainer. The optional xAI evaluator sends test inputs and instructions to its provider only when you configure it.
 
+## Acknowledgements
+
+Thanks for the inspiration: [Lauren Tan (Potato)](https://x.com/poteto) and [Alex Krol](https://github.com/alexeykrol/).
+
 License: [MIT](LICENSE).
