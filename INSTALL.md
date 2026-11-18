@@ -4,10 +4,10 @@ Remain the user's personal bot. Keep existing memory and duties. Create only a D
 
 ## 1. Prepare the environment
 
-Get `v1.5.3` from https://github.com/alexzah-droid/GrokBotDevTeam. Use separate permanent absolute paths for `<release>`, `<venv>`, and `<runtime>` and Python 3.10+ (`<python>`).
+Get `v1.6.0` from https://github.com/alexzah-droid/GrokBotDevTeam. Use the stable GitHub release marked `Latest`. Use separate permanent absolute paths for `<release>`, `<venv>`, and `<runtime>` and Python 3.10+ (`<python>`).
 
 ```text
-git clone --depth 1 --branch v1.5.3 https://github.com/alexzah-droid/GrokBotDevTeam.git <release>
+git clone --depth 1 --branch v1.6.0 https://github.com/alexzah-droid/GrokBotDevTeam.git <release>
 <python> -m venv <venv>
 <venv>/bin/python -B <release>/scripts/doctor.py
 <venv>/bin/python -B <release>/scripts/release.py check

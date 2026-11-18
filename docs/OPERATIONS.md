@@ -29,6 +29,8 @@ Finish or cancel active trials before running `service stop` at the user's reque
 
 An error or missing reply leaves the operation pending reconciliation. The queue records delivery after it receives the receipt. Use the mock adapter for tests.
 
+After review, the controller may queue a handoff to the Lead with reason `review` even if the Lead already handled it. The Lead acknowledges it as self-delivered.
+
 ## Recover an interrupted evaluation
 
 A candidate in `testing` is still unresolved. Leave interrupted external calls alone, since they may already have incurred charges. The user can cancel the experiment and start a new one. An `inconclusive` report also prevents application. If active work holds up a passing candidate, check its state and run `improve progress` once the work finishes. The watchdog can also advance an eligible candidate.
@@ -49,7 +51,7 @@ Redirect `export` to a file outside the release for a readable archive. To resto
 
 ## Update and disconnect
 
-Each team pins a release. Editing release files in place causes an integrity error at `role read`. Moving to a different release requires a separate migration and contract check. Automatic migration across future versions is outside this pre-release.
+Each team pins a release. Editing release files in place causes an integrity error at `role read`. Teams pinned to `v1.5.3` keep working there. To migrate to `v1.6.0`, finish tasks and trials and save the old runtime and an export. Check role contract compatibility, then follow [INSTALL](../INSTALL.md) using separate release, venv, and runtime paths. Rebind the project and verify readiness before routing new tasks to the new team. Keep the old runtime as an archive. To reuse the same Lead, disconnect its old bootstrap before installing the new team.
 
 To disconnect, finish work, cancel active trials with rollback, stop the watchdog, and remove the team bootstrap from each participant's memory at the user's request. The bots, conversation history, and user data remain on the platform. The Lead resumes its usual work.
 

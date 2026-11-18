@@ -1,6 +1,16 @@
-# Pre-release 1.5.3 validation
+# Release 1.6.0 validation
 
 This is the fifth version of the project. Local tests use a simulated platform and a deterministic evaluator, with no paid model calls.
+
+## Live pilots
+
+All three pilots are dated November 18, 2026. This release uses their results because the team behavior matches 1.5.3.
+
+| Version | Result |
+| --- | --- |
+| 1.5.1 | The pilot summary records setup of two roles, passing probes, a running watchdog, and task acceptance after human approval. A separate detailed report from the same date describes a controller simulation. |
+| 1.5.2 | Russian edition. The operator approved autonomous mode and both bots appeared in the selected folder. Independent review, demo, and task acceptance passed. |
+| 1.5.3 | English edition. Both bots appeared in the selected folder and waited for setup. Installation, independent review, demo, and card-based acceptance passed. |
 
 ## Reproduce locally
 

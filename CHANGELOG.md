@@ -2,6 +2,10 @@
 
 **English** · [Русский](CHANGELOG.ru.md)
 
+## 1.6.0 — 2026-11-18 — first stable release
+
+This is the fifth version of the project. Team behavior matches 1.5.3. The release channel is stable, and the [live installation evidence](VALIDATION.md) is recorded. Existing teams stay pinned to their installed version. See [migration](docs/OPERATIONS.md#update-and-disconnect).
+
 ## 1.5.3 — pre-release
 
 This is the fifth version of the project. New bots wait for the Lead to configure them, and installation binds each bot immediately after creation. Task cards quote a short goal. The README describes the built-in self-improvement loop and links to the security section from the top. The confirmation guide explains how project binding works in each mode.

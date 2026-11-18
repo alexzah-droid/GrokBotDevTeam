@@ -2,7 +2,7 @@
 
 **English** · [Русский](README.ru.md)
 
-This is the fifth version of the project. Pre-release 1.5.3.
+This is the fifth version of the project. Release 1.6.0.
 
 Install on a separate computer without work secrets. See [Security](#security-first).
 
@@ -20,12 +20,12 @@ The team tracks recurring failures, and a bot proposes a change to its own instr
 
 ## Install
 
-Installation uses the published tag `v1.5.3`. Paste either message into your existing Grok Bot chat. The installer checks the available native Grok Bot tools before creating the team and reports any missing capability.
+Installation uses the published tag `v1.6.0`. Paste either message into your existing Grok Bot chat. The installer checks the available native Grok Bot tools before creating the team and reports any missing capability.
 
 ### English message
 
 ```text
-Install GrokBotDevTeam from https://github.com/alexzah-droid/GrokBotDevTeam using the v1.5.3 pre-release.
+Install GrokBotDevTeam from https://github.com/alexzah-droid/GrokBotDevTeam using release v1.6.0.
 Read and follow the English INSTALL.md from that tag. Stay my Lead and create only a Developer and a Reviewer.
 Ask me to choose the instruction mode first and put the new bots in your folder if possible.
 Check that the team is ready, then ask for my first task.
@@ -34,13 +34,15 @@ Check that the team is ready, then ask for my first task.
 ### Russian message
 
 ```text
-Установи GrokBotDevTeam из https://github.com/alexzah-droid/GrokBotDevTeam, prerelease v1.5.3.
+Установи GrokBotDevTeam из https://github.com/alexzah-droid/GrokBotDevTeam, выпуск v1.6.0.
 Прочитай и выполни английский INSTALL.md из этого тега. Останься моим Руководителем, создай только Разработчика и Проверяющего.
 Сначала предложи выбрать режим инструкций. По возможности помести новых ботов в свою папку.
 Проверь готовность команды и предложи прислать первую задачу.
 ```
 
 The [full installation message](install-prompt.txt) includes recovery and permission rules. The first card offers approval or automatic instruction improvement. Automatic mode needs a second confirmation. A decline or no reply keeps approval. The Lead uses its sidebar folder when available, or offers a folder choice.
+
+Teams pinned to `v1.5.3` can keep using that release. Follow [the migration guide](docs/OPERATIONS.md#update-and-disconnect) to move to `v1.6.0` in a separate installation.
 
 ## What you get
 
@@ -73,7 +75,7 @@ The default channel is `chat`. The Lead presents the exact question, records you
 
 For a new or changed project binding, the Lead runs `project bind` without a card in team mode `autonomous`. In `approval`, the Lead needs a single-use `project.bind` grant.
 
-The chat flow assumes a trusted Lead. A bot on the same host can forge the reply and its `message_ref`, reach the terminal issuer through a pseudo-terminal or direct Python import, or write a grant into SQLite. Issuing confirmations off the bot host or signing them with a key unavailable to bots is planned before a stable release. See [Security](SECURITY.md).
+The chat flow assumes a trusted Lead. A bot on the same host can forge the reply and its `message_ref`, reach the terminal issuer through a pseudo-terminal or direct Python import, or write a grant into SQLite. See [Security](SECURITY.md).
 
 ## Verify locally
 

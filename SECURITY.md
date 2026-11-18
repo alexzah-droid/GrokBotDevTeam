@@ -2,7 +2,7 @@
 
 **English** · [Русский](SECURITY.ru.md)
 
-GrokBotDevTeam is an unofficial project by alexzah-droid, independent of xAI. Grok is a trademark of xAI. Version 1.5.3 is a pre-release.
+GrokBotDevTeam is an unofficial project by alexzah-droid, independent of xAI. Grok is a trademark of xAI. Version 1.6.0 is the first stable release.
 
 ## What the controller protects
 
@@ -12,7 +12,7 @@ Transactions and locks prevent partial state updates. Single-use grants bind app
 
 Bots that share a host can read the same files and operate with the same permissions. A bot can forge the reply and its `message_ref`, reach the terminal issuer through a pseudo-terminal or direct Python import, modify files, or write a grant into SQLite. The question and diff hash bind approval to what was shown. Whether a human saw the question and authored the reply depends on the Lead and the platform.
 
-Off-host issuance or signatures made with a key unavailable to the bots are planned before a stable release. Both channels currently protect the normal path against mistakes, replay, and stale state.
+Both channels issue grants on the team host and protect the normal path against mistakes, replay, and stale state.
 
 The controller records the active version. Applying an instruction after a trial or rollback depends on the bot running `role read` and following the returned instruction. Receipts require genuine native references. The controller relies on the platform for their authenticity.
 

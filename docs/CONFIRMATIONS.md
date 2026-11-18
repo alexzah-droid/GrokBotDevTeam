@@ -21,6 +21,8 @@ Use a single-use grant for protected actions. The default channel is `chat`. In 
 
 4. Run the authorized action as `--actor user` with the code via stdin (`--confirmation -`). The journal records the question, answer, channel, times, and hashes. Reply IDs are single-use.
 
+If the owner answers a card in another chat, `message_ref` may contain the actual relay reference for that reply.
+
 `policy channel terminal` tightens the policy without a grant. To switch back, describe `policy.channel` for `system` with `{"channel":"chat"}`, obtain a terminal grant, and run `--actor user --confirmation - policy channel chat`. A channel change increments the policy revision.
 
 The card lists key parameters separately and shows an eight-character action code. Pass the full `hash` from `confirm describe --json` to the issuer. The grant binds the full hash, payload, target, and revision.
@@ -67,8 +69,8 @@ An approval card displays up to 40 lines and 2,000 characters of the diff. A tru
 
 Hash `request_id` as a UTF-8 string without JSON quotes. Task creation consumes the automatic acceptance grant. The later acceptance uses the stored delegation. A Lead creating a regular task at the user's request needs no grant if automatic acceptance is disabled.
 
-For actions that take a JSON file, pass the same data to describe and execute. If a field requires `evidence` before the card is answered, use an existing request or demo reference. The journal stores the actual reply ID separately in `message_ref`.
+For actions that take a JSON file, pass the same data to describe and execute. If a field requires `evidence` before the card is answered, use an existing request or demo reference. The journal stores the reply or relay reference separately in `message_ref`.
 
 ## Trust boundary
 
-The chat channel assumes a trusted Lead and protects against mistakes, replay, and stale state. A bot on the same host can forge reply data, reach terminal issuance through a pseudo-terminal or direct Python import, or write a grant into SQLite. Off-host issuance or signatures made with a key unavailable to bots are planned before a stable release. See [Security](../SECURITY.md).
+The chat channel assumes a trusted Lead and protects against mistakes, replay, and stale state. A bot on the same host can forge reply data, reach terminal issuance through a pseudo-terminal or direct Python import, or write a grant into SQLite. See [Security](../SECURITY.md).
