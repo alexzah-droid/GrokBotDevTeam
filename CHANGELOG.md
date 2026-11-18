@@ -2,6 +2,10 @@
 
 **English** · [Русский](CHANGELOG.ru.md)
 
+## 1.5.2 — pre-release
+
+This is the fifth version of the project. Pilot follow-up: choose improvement mode at setup, put new bots in the Lead’s sidebar folder, and use clearer confirmation cards. Local commits link to reviewed snapshots. Generated Python caches stay out of verification. Project binding requires approval in approval mode. Setup offers optional watchdog restart. Native call references and role-specific startup messages are clearer. The affected instruction and skill hashes changed.
+
 ## 1.5.1 — pre-release
 
 This is the fifth version of the project. Removed the live-installation caveats from public descriptions. Controller behavior and bot instructions are unchanged.

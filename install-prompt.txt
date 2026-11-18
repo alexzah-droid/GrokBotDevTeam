@@ -1,10 +1,10 @@
 Install my development team from https://github.com/alexzah-droid/GrokBotDevTeam.
-Use pre-release `v1.5.1`. Read and follow `INSTALL.md` in full.
+Use pre-release `v1.5.2`. Read and follow `INSTALL.md` in full.
 Keep my existing bot as Lead with its name and existing duties.
 Create only two new bots, the Developer and the Reviewer.
-Use human approval for team-wide instruction changes. Let each role inherit that setting.
+Choose the mode in the first step. Put the new bots in your folder if possible.
 Set up the six skills, task handoffs, independent verification, instruction history, and automatic rollback.
 Resume without duplicates. Enable no schedules or external sends that I did not choose.
 Never ask for passwords or keys in chat. Report the specific blocker if a required capability is missing.
 Distinguish simulations from live verification. Check readiness and ask for my first task.
-Install only from this repository and tag, on a host without work secrets, in `approval` mode.
+Install only from this repository and tag, on a host without work secrets.

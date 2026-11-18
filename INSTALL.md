@@ -1,41 +1,43 @@
 # Install the team with one message
 
-Install as the user's personal bot. Create exactly one Developer and one Reviewer. Keep your existing duties and leave other teams alone. This request authorizes those steps. Use available tools within their permissions.
+Remain the user's personal bot. Keep existing memory and duties. Create only a Developer and a Reviewer.
 
 ## 1. Prepare the environment
 
-Get pre-release `v1.5.1` from https://github.com/alexzah-droid/GrokBotDevTeam. Stop and report a missing tag. Use separate permanent absolute paths for `<release>`, `<venv>`, and `<runtime>`. Choose Python 3.10+ (`<python>`) for the venv. Pass argv with exact paths.
+Get `v1.5.2` from https://github.com/alexzah-droid/GrokBotDevTeam. Use separate permanent absolute paths for `<release>`, `<venv>`, and `<runtime>` and Python 3.10+ (`<python>`).
 
 ```text
-git clone --depth 1 --branch v1.5.1 https://github.com/alexzah-droid/GrokBotDevTeam.git <release>
+git clone --depth 1 --branch v1.5.2 https://github.com/alexzah-droid/GrokBotDevTeam.git <release>
 <python> -m venv <venv>
 <venv>/bin/python -B <release>/scripts/doctor.py
 <venv>/bin/python -B <release>/scripts/release.py check
 <venv>/bin/python -B -m pip install --no-deps --no-index <release>
 ```
 
-Find tools to create bots, deliver targeted messages, save durable memory, and verify results. Report any missing capability. Prefix controller commands with:
+Discover native tools. Report missing creation, handoff, memory or check tools. Use exact argv:
 
 ```text
 <venv>/bin/python -B <release>/teamctl.py --workspace <runtime>
 ```
 
-## 2. Start installation
+## 2. Choose mode and folder
 
-Run `--actor installer install --lead-id <lead-id>` with your actual ID. Reuse the runtime on retry. Defaults are `approval` and `chat`. Only if the user separately chooses autonomy, run `confirm describe --action install --target <lead-id> --file params.json` with `{"mode":"autonomous","adapter":"native","source":"https://github.com/alexzah-droid/GrokBotDevTeam"}`. The installer records an explicit human reply in chat. The human issues grants in terminal mode. Apply the grant to `install --mode autonomous` per [the confirmation procedure](docs/CONFIRMATIONS.md).
+First, before creating bots: `--actor installer install-options --lead-id <lead-id>` returns `mode_card`. Show it verbatim. Record the choice via `--choice approval|autonomous`. Decline, dismissal, or no reply means `approval`. On resume, read the saved choice without asking again.
+
+Find your folder using a native tool. If unknown, call `ListSections`. Show `folder_card` with up to five folders and the no-folder option. Put yours first if known. Use real IDs. No list means no folder.
+
+Before `--actor installer install --lead-id <lead-id>` add `--section-id <id>` if a folder was chosen. For `autonomous`, first show the second card from `confirm describe --action install --target <lead-id> --file params.json`. Only an explicit yes earns a grant via `confirm chat` for `install --mode autonomous`. On decline, dismissal, or silence, record `approval` and install without a grant. On resume use the original reply, or keep `approval`. [Confirmation parameters](docs/CONFIRMATIONS.md).
 
 ## 3. Work through the queue
 
-Use `--actor installer` without `--mock` for native setup. Read `bridge pending`. For `pending`, run `bridge begin <op>`, call the native tool, then run `bridge ack <op> --file receipt.json`. For `dispatched`, find the actual result in history. Stop if uncertain. Read the queue after each acknowledgement.
+Use `--actor installer` without `--mock`. Read `bridge pending`. For `pending`: `bridge begin <op>`, native call, `bridge ack <op> --file receipt.json`. For `dispatched`, reconcile history before retrying.
 
-- **`create`.** Create a bot named `data.name`. A matching name alone does not establish team membership. Record the actual `agent_id` and `external_ref` of the call or result.
-- **`bind`.** Save `data.bootstrap` in your role's durable memory or send it to the assigned bot to save. Preserve existing memory. In that role, run the startup argv and read the prompt and referenced skills, then run `--actor <role> role probe <role>`. Verify persistence with a platform tool and a repeat check where possible. Add the actual `external_ref` and `"persistent":true` to the probe JSON only after verification.
-- **`smoke`.** Send `--actor <role> role smoke <role>` to the Developer, then the Reviewer, to run in their own contexts. Add the native message `external_ref` to the receipt.
+- **`create`.** Pass `data.name` and the saved `section_id` to `CreateAgent` if supported. Retry without a folder only on explicit failure without creation. Record actual `agent_id`, `external_ref`, and `section_id` (or `null` without a folder). Matching names alone prove nothing.
+- **`bind`.** Save `data.bootstrap` to the intended bot's memory. Have it read the rule and skills and run `--actor <role> role probe <role>`. Check persistence natively and repeat the check where possible. Add `"persistent":true` and `external_ref` to the verified probe.
+- **`smoke`.** Developer, then Reviewer run `--actor <role> role smoke <role>`. Add the handoff `external_ref`. If `SendToAgent` or `UpdateMemory` returns no ID, record `agent-message:<id>:<step>:<time>` or `native-memory:profile:<id>:<step>:<time>` per [formats](docs/FORMATS.md). This records an observation rather than delivery.
 
 ## 4. Confirm readiness
 
-Run `--actor installer service start`. Read `status` until `watchdog_alive=true`. Use the [routine template](routines/watchdog-restart.md) for recovery only if the user chooses it. Verify its trigger.
+Run `--actor installer service start` and check `watchdog_alive=true` in `status`. Run `--actor installer install-finish`. When `ready`, report roles, mode, overrides, and actual or unknown folders. Ask for the first task. Offer optional startup `service start` in one line via the [routine template](routines/watchdog-restart.md). On failure report the blocker. On resume check `status` and queue.
 
-Run `--actor installer install-finish`. At `ready`, report the three roles, team mode, and overrides. Ask for the first task. Otherwise state completed steps and the blocker. On reentry read `status` and resume the same queue.
-
-[Operations, recovery, and removal](docs/OPERATIONS.md) · [Trust model](SECURITY.md).
+[Operations](docs/OPERATIONS.md) · [Trust model](SECURITY.md).

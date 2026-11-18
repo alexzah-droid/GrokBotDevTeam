@@ -18,7 +18,12 @@
     "service.stop": "Stop the local trial watchdog",
     "install": "Install the team in the selected mode"
   },
-  "chat_answers": ["yes", "approve", "confirm", "yes, i confirm"],
+  "chat_answers": [
+    "yes",
+    "approve",
+    "confirm",
+    "yes, i confirm"
+  ],
   "consequences": {
     "policy.set": "The new mode governs how improvements are applied and accepted.",
     "policy.channel": "Future protected actions can be confirmed in chat.",
@@ -41,16 +46,22 @@
   "bootstrap": {
     "header": "GrokBotDevTeam {team_id}, role {role}.",
     "scope": "Only for this team's tasks:",
-    "read": "Run argv and read the JSON.",
+    "read": "run argv and read the JSON.",
     "stop": "If role read is unavailable, fails, or reports blocked, stop and",
     "notify": "notify the Lead (the Lead notifies the user).",
-    "stale": "Do not work from a remembered copy."
+    "stale": "Do not work from a remembered copy.",
+    "notify_user": "notify the user."
   },
-  "roles": {"developer": "Developer", "reviewer": "Reviewer"},
-  "buttons": {"yes": "Yes, I confirm", "no": "No"},
+  "roles": {
+    "developer": "Developer",
+    "reviewer": "Reviewer"
+  },
+  "buttons": {
+    "yes": "Yes, I confirm",
+    "no": "No"
+  },
   "card": {
     "question": "Approve “{action}” for {subject}?",
-    "parameters": "Parameters: {summary}",
     "parameters_more": "… You can request the full parameters before answering.",
     "metric": "Target metric: {baseline:.0%} → {candidate:.0%}.",
     "changes": "Instruction changes:",
@@ -59,6 +70,50 @@
     "diff": "Full diff: `diff {target}`.",
     "observations": "Successful observations: {successes}. Version: {version}.",
     "consequences": "Consequences: {details}",
-    "hash": "Action hash: {hash}"
+    "hash": "Action code: {hash}"
+  },
+  "install_cards": {
+    "mode": {
+      "question": "How should the team change its own instructions?",
+      "detail": "This mode only applies to instruction improvement. Network access, git push, commands outside the project, and access to secrets require permission in either mode.",
+      "buttons": {
+        "approval": "With my approval (recommended)",
+        "autonomous": "Automatically"
+      }
+    },
+    "autonomous": {
+      "question": "Allow automatic instruction changes?",
+      "warnings": [
+        "Bots can apply and accept improvements without your approval.",
+        "Checks, history, and rollback stay enabled. Permissions for external actions stay the same."
+      ],
+      "buttons": {
+        "yes": "Yes, automatically",
+        "no": "No, with approval"
+      }
+    },
+    "folder": {
+      "question": "Which folder should contain the new bots?",
+      "none": "No folder",
+      "here": "(where I am)"
+    }
+  },
+  "parameter_labels": {
+    "repository": "Project path",
+    "command": "Verification command",
+    "timeout": "Timeout (seconds)",
+    "mode": "Mode",
+    "channel": "Channel",
+    "section_id": "Folder ID",
+    "version": "Version",
+    "goal": "Goal",
+    "reason": "Reason",
+    "model_id": "Model",
+    "environment_id": "Environment",
+    "cwd": "Working directory",
+    "max_calls": "Call limit",
+    "max_seconds": "Time limit (seconds)",
+    "success": "Success",
+    "critical": "Critical failure"
   }
 }

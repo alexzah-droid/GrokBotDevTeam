@@ -2,7 +2,7 @@
 
 [English](SECURITY.md) · **Русский**
 
-Это неофициальный проект alexzah-droid, не связанный с xAI. Grok — торговая марка xAI. Версия 1.5.1 — prerelease.
+Это неофициальный проект alexzah-droid, не связанный с xAI. Grok — торговая марка xAI. Версия 1.5.2 — prerelease.
 
 ## Что защищает контроллер
 

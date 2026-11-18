@@ -6,9 +6,11 @@ Use `<venv>/bin/python -B <release>/teamctl.py --workspace <runtime> --actor <ro
 
 Run `install --lead-id <actual-id>`, then handle `bridge pending` with `bridge begin <operation-id>` and `bridge ack <operation-id> --file receipt.json`. Follow the [installation guide](../INSTALL.md) for native receipt fields and probes. Run `service start`, `install-finish`, and `status` to finish. Each role calls `role read <role>` and performs its own `role probe <role>` or `role smoke <role>` when requested. `install --mock` is for tests.
 
+If `SendToAgent` or `UpdateMemory` returns no ID, use `agent-message:<id>:<step>:<time>` or `native-memory:profile:<id>:<step>:<time>` as `external_ref`. Use the real agent ID, the step, and the observed timestamp. A descriptive reference records the call, without authenticating delivery or persistence. Check the recipient's probe or native evidence independently. Create receipts record the actual `section_id`, or `null` for no folder.
+
 ## Project
 
-Use `project bind --file project.json` with a repository, authorized command, timeout, and evidence reference.
+Use `project bind --file project.json` with a repository, authorized command, timeout, and evidence reference. In approval obtain the exact `project.bind` grant first.
 
 ```json
 {
@@ -39,7 +41,7 @@ Use `task create --file request.json` with a stable request ID, user reference, 
 Automatic acceptance needs `auto_accept: true`, an explicit `auto_accept_ref`, and an action-bound grant. For all task transitions include a unique `event_id`. Repeating a transition with the same event ID is idempotent when its contents match.
 
 - Lead runs `task plan <id> --file plan.json` with `steps`.
-- Developer runs `project verify --task <id>` and `task submit <id> --file submission.json` with `summary` and a tracked `path` or a `not_needed` explanation for each of `architecture`, `user`, and `agent` in `docs`.
+- Developer runs `project verify --task <id>` and `task submit <id> --file submission.json` with `summary`, the local SHA in `commit`, and a tracked `path` or a `not_needed` explanation for each of `architecture`, `user`, and `agent` in `docs`.
 - Reviewer runs an independent `project verify --task <id>` and `task review <id> --file review.json`. For `pass`, provide each criterion exactly once with `id`, `passed: true`, and `evidence`. For `changes_requested` or `blocked`, supply `findings`.
 - Lead runs `task demo <id> --file demo.json` with reproducible `steps` and `usage`. Manual `task accept <id> --file acceptance.json` uses the `user` actor, grant, and human `evidence`.
 - Lead or user can run `task block` or `task cancel` with the task ID and a JSON file containing `event_id` and `reason`. For user actions, obtain the matching grant. Inspect `task list` and `task show <id>` after interruptions.

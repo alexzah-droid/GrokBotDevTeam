@@ -2,7 +2,7 @@
 
 **English** · [Русский](SECURITY.ru.md)
 
-GrokBotDevTeam is an unofficial project by alexzah-droid, independent of xAI. Grok is a trademark of xAI. Version 1.5.1 is a pre-release.
+GrokBotDevTeam is an unofficial project by alexzah-droid, independent of xAI. Grok is a trademark of xAI. Version 1.5.2 is a pre-release.
 
 ## What the controller protects
 

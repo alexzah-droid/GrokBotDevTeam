@@ -2,7 +2,7 @@
 
 **English** · [Русский](README.ru.md)
 
-This is the fifth version of the project. Pre-release 1.5.1.
+This is the fifth version of the project. Pre-release 1.5.2.
 
 Russian edition with bot instructions in Russian: [GrokBotDevTeamRU](https://github.com/alexzah-droid/GrokBotDevTeamRU).
 
@@ -25,27 +25,27 @@ This is an unofficial project, not affiliated with xAI. Grok is a trademark of x
 
 ## Install
 
-Installation uses the published tag `v1.5.1`. Paste either message into your existing Grok Bot chat. The installer checks the available native Grok Bot tools before creating the team and reports any missing capability.
+Installation uses the published tag `v1.5.2`. Paste either message into your existing Grok Bot chat. The installer checks the available native Grok Bot tools before creating the team and reports any missing capability.
 
 ### English message
 
 ```text
-Install GrokBotDevTeam from https://github.com/alexzah-droid/GrokBotDevTeam using the v1.5.1 pre-release.
+Install GrokBotDevTeam from https://github.com/alexzah-droid/GrokBotDevTeam using the v1.5.2 pre-release.
 Read and follow the English INSTALL.md from that tag. Stay my Lead and create only a Developer and a Reviewer.
-Use approval for instruction changes and let each role inherit the team setting.
+Ask me to choose the instruction mode first and put the new bots in your folder if possible.
 Check that the team is ready, then ask for my first task.
 ```
 
 ### Russian message
 
 ```text
-Установи GrokBotDevTeam из https://github.com/alexzah-droid/GrokBotDevTeam, prerelease v1.5.1.
+Установи GrokBotDevTeam из https://github.com/alexzah-droid/GrokBotDevTeam, prerelease v1.5.2.
 Прочитай и выполни английский INSTALL.md из этого тега. Останься моим Руководителем, создай только Разработчика и Проверяющего.
-Для изменения инструкций используй approval. Пусть все роли наследуют общий режим.
+Сначала предложи выбрать режим инструкций. По возможности помести новых ботов в свою папку.
 Проверь готовность команды и предложи прислать первую задачу.
 ```
 
-The [full installation message](install-prompt.txt) includes recovery and permission rules. If you choose `autonomous` during setup, confirm that change separately.
+The [full installation message](install-prompt.txt) includes recovery and permission rules. The first card offers approval or automatic instruction improvement. Automatic mode needs a second confirmation. A decline or no reply keeps approval. The Lead uses its sidebar folder when available, or offers a folder choice.
 
 ## What you get
 

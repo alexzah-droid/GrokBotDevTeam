@@ -2,7 +2,7 @@
 
 [English](README.md) · **Русский**
 
-Пятая версия проекта. Prerelease 1.5.1.
+Пятая версия проекта. Prerelease 1.5.2.
 
 Русский выпуск с инструкциями ботов на русском: [GrokBotDevTeamRU](https://github.com/alexzah-droid/GrokBotDevTeamRU).
 
@@ -25,27 +25,27 @@ GrokBotDevTeam устанавливает команду разработки и
 
 ## Установка
 
-Установка работает с опубликованного тега `v1.5.1`. Отправьте любое из сообщений ниже в чат со своим Grok Bot. Установщик проверит доступные нативные инструменты Grok Bot до создания команды и сообщит, если какой-то возможности нет.
+Установка работает с опубликованного тега `v1.5.2`. Отправьте любое из сообщений ниже в чат со своим Grok Bot. Установщик проверит доступные нативные инструменты Grok Bot до создания команды и сообщит, если какой-то возможности нет.
 
 ### Сообщение на английском
 
 ```text
-Install GrokBotDevTeam from https://github.com/alexzah-droid/GrokBotDevTeam using the v1.5.1 pre-release.
+Install GrokBotDevTeam from https://github.com/alexzah-droid/GrokBotDevTeam using the v1.5.2 pre-release.
 Read and follow the English INSTALL.md from that tag. Stay my Lead and create only a Developer and a Reviewer.
-Use approval for instruction changes and let each role inherit the team setting.
+Ask me to choose the instruction mode first and put the new bots in your folder if possible.
 Check that the team is ready, then ask for my first task.
 ```
 
 ### Сообщение на русском
 
 ```text
-Установи GrokBotDevTeam из https://github.com/alexzah-droid/GrokBotDevTeam, prerelease v1.5.1.
+Установи GrokBotDevTeam из https://github.com/alexzah-droid/GrokBotDevTeam, prerelease v1.5.2.
 Прочитай и выполни английский INSTALL.md из этого тега. Останься моим Руководителем, создай только Разработчика и Проверяющего.
-Для изменения инструкций используй approval. Пусть все роли наследуют общий режим.
+Сначала предложи выбрать режим инструкций. По возможности помести новых ботов в свою папку.
 Проверь готовность команды и предложи прислать первую задачу.
 ```
 
-В [полном сообщении для установки](install-prompt.txt) указаны правила восстановления и разрешений. Если вы выбираете `autonomous` при установке, подтвердите этот выбор отдельно.
+В [полном сообщении для установки](install-prompt.txt) указаны правила восстановления и разрешений. Первая карточка предлагает менять инструкции с подтверждением или автоматически. Автоматический режим требует второго согласия. При отказе или без ответа действует подтверждение. Руководитель размещает новых ботов в своей папке, если может её определить, или предлагает выбрать папку.
 
 ## Что входит
 

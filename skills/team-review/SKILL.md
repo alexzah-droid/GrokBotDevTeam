@@ -5,7 +5,7 @@ description: Verify the submitted snapshot against the criteria.
 
 # Review
 
-Read the request, submission, diff, and previous findings. Confirm `review` and verify the snapshot with [`project-verification`](../project-verification/SKILL.md). Check docs with `technical-writing`. If the snapshot changes, ask for a newly verified submission.
+Read the request, submission, diff, and previous findings. In `review`, check the SHA in `commit` and verify the snapshot with [`project-verification`](../project-verification/SKILL.md). Check docs with `technical-writing`. If the snapshot changes, ask for a newly verified submission.
 
 Add up to eight checks using `project add-check --file extra-argv.json` (an argv array). Preserve the base checks. Rerun the profile after adding a check.
 
