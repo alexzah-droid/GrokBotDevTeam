@@ -2,13 +2,11 @@
 
 **English** · [Русский](README.ru.md)
 
-This is the fifth version of the project. Pre-release 1.5.0, live install not verified.
+This is the fifth version of the project. Pre-release 1.5.1.
 
 Russian edition with bot instructions in Russian: [GrokBotDevTeamRU](https://github.com/alexzah-droid/GrokBotDevTeamRU).
 
 GrokBotDevTeam sets up a three-bot software development team from a single message. Your existing Grok Bot becomes the **Lead** and keeps its usual duties. It adds a **Developer** to implement tasks and a **Reviewer** to verify the result independently. Together they clarify requests, plan work, maintain documentation, and demonstrate the result for acceptance.
-
-**Status:** v1.5.0 is a pre-release for a live pilot. Live install not verified (`live_verified: false`). Local tests and demos use a mock platform and a deterministic evaluator. Before each task, the bots must run `role read` and use the returned instruction. The controller updates the active version on rollback. A live pilot still needs to verify that the bots read and follow the restored instruction.
 
 This is an unofficial project, not affiliated with xAI. Grok is a trademark of xAI. The original code is copyright alexzah-droid.
 
@@ -27,12 +25,12 @@ This is an unofficial project, not affiliated with xAI. Grok is a trademark of x
 
 ## Install
 
-Installation uses the published tag `v1.5.0`. Paste either message into your existing Grok Bot chat. The installer checks the available native Grok Bot tools before creating the team and reports any missing capability.
+Installation uses the published tag `v1.5.1`. Paste either message into your existing Grok Bot chat. The installer checks the available native Grok Bot tools before creating the team and reports any missing capability.
 
 ### English message
 
 ```text
-Install GrokBotDevTeam from https://github.com/alexzah-droid/GrokBotDevTeam using the v1.5.0 pre-release.
+Install GrokBotDevTeam from https://github.com/alexzah-droid/GrokBotDevTeam using the v1.5.1 pre-release.
 Read and follow the English INSTALL.md from that tag. Stay my Lead and create only a Developer and a Reviewer.
 Use approval for instruction changes and let each role inherit the team setting.
 Check that the team is ready, then ask for my first task.
@@ -41,7 +39,7 @@ Check that the team is ready, then ask for my first task.
 ### Russian message
 
 ```text
-Установи GrokBotDevTeam из https://github.com/alexzah-droid/GrokBotDevTeam, prerelease v1.5.0.
+Установи GrokBotDevTeam из https://github.com/alexzah-droid/GrokBotDevTeam, prerelease v1.5.1.
 Прочитай и выполни английский INSTALL.md из этого тега. Останься моим Руководителем, создай только Разработчика и Проверяющего.
 Для изменения инструкций используй approval. Пусть все роли наследуют общий режим.
 Проверь готовность команды и предложи прислать первую задачу.

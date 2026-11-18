@@ -1,6 +1,6 @@
-# Pre-release 1.5.0 validation
+# Pre-release 1.5.1 validation
 
-This is the fifth version of the project. Live install not verified (`live_verified: false`). Local tests use a simulated platform and a deterministic evaluator, with no paid model calls.
+This is the fifth version of the project. Local tests use a simulated platform and a deterministic evaluator, with no paid model calls.
 
 ## Reproduce locally
 
@@ -21,6 +21,6 @@ The demo runs a task, independent checks, acceptance, and rollback. It exercises
 
 Compare SHA-256 across two ZIP and TAR.GZ builds. Compare file contents with the manifest. The root is `GrokBotDevTeam-<version>/`. Release files exclude runtime state, SQLite, environment files, logs, caches, and local reports.
 
-## Live pilot scope
+## Checks in your account
 
-Check native creation, durable memory, receipts, cards and reply IDs, instruction application, and watchdog restart in a live pilot. Processes on a shared host can forge confirmations. See [Security](SECURITY.md).
+In your account, check native bot creation, durable memory, receipts, cards and reply IDs, execution of `role read`, application of instructions, and watchdog recovery. Processes on a shared host can forge confirmations. See [Security](SECURITY.md).

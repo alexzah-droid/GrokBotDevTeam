@@ -5,4 +5,4 @@
 - [Chat and collaboration](https://docs.x.ai/grok-bot/chat-and-collaboration) describes native handoffs. The bridge records actual results from the platform tools.
 - [Chat Completions](https://docs.x.ai/developers/model-capabilities/legacy/chat-completions) documents the optional text evaluator's API. It is separate from bot management and needs explicit user setup.
 
-Platform documentation does not verify deployment of this package. A live pilot must check the available tools and actual receipts in the target account.
+Check available tools and actual receipts in your Grok Bot account.

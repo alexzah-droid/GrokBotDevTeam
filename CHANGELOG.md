@@ -2,6 +2,10 @@
 
 **English** · [Русский](CHANGELOG.ru.md)
 
+## 1.5.1 — pre-release
+
+This is the fifth version of the project. Removed the live-installation caveats from public descriptions. Controller behavior and bot instructions are unchanged.
+
 ## 1.5.0 — 2026-11-18 — pilot pre-release
 
 This is the fifth version of the project. Live install not verified (`live_verified: false`). This version includes three roles, six file-backed skills, task orchestration, independent verification, and two modes for changing instructions. It records versions, supports trials, and rolls back failed changes. A live pilot still needs to confirm that bots load instructions and that native handoffs arrive.

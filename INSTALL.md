@@ -4,10 +4,10 @@ Install as the user's personal bot. Create exactly one Developer and one Reviewe
 
 ## 1. Prepare the environment
 
-Get pre-release `v1.5.0` from https://github.com/alexzah-droid/GrokBotDevTeam. Stop and report a missing tag. Use separate permanent absolute paths for `<release>`, `<venv>`, and `<runtime>`. Choose Python 3.10+ (`<python>`) for the venv. Pass argv with exact paths.
+Get pre-release `v1.5.1` from https://github.com/alexzah-droid/GrokBotDevTeam. Stop and report a missing tag. Use separate permanent absolute paths for `<release>`, `<venv>`, and `<runtime>`. Choose Python 3.10+ (`<python>`) for the venv. Pass argv with exact paths.
 
 ```text
-git clone --depth 1 --branch v1.5.0 https://github.com/alexzah-droid/GrokBotDevTeam.git <release>
+git clone --depth 1 --branch v1.5.1 https://github.com/alexzah-droid/GrokBotDevTeam.git <release>
 <python> -m venv <venv>
 <venv>/bin/python -B <release>/scripts/doctor.py
 <venv>/bin/python -B <release>/scripts/release.py check
@@ -26,7 +26,7 @@ Run `--actor installer install --lead-id <lead-id>` with your actual ID. Reuse t
 
 ## 3. Work through the queue
 
-Use `--actor installer` without `--mock` for live installs. Read `bridge pending`. For `pending`, run `bridge begin <op>`, call the native tool, then run `bridge ack <op> --file receipt.json`. For `dispatched`, find the actual result in history. Stop if uncertain. Read the queue after each acknowledgement.
+Use `--actor installer` without `--mock` for native setup. Read `bridge pending`. For `pending`, run `bridge begin <op>`, call the native tool, then run `bridge ack <op> --file receipt.json`. For `dispatched`, find the actual result in history. Stop if uncertain. Read the queue after each acknowledgement.
 
 - **`create`.** Create a bot named `data.name`. A matching name alone does not establish team membership. Record the actual `agent_id` and `external_ref` of the call or result.
 - **`bind`.** Save `data.bootstrap` in your role's durable memory or send it to the assigned bot to save. Preserve existing memory. In that role, run the startup argv and read the prompt and referenced skills, then run `--actor <role> role probe <role>`. Verify persistence with a platform tool and a repeat check where possible. Add the actual `external_ref` and `"persistent":true` to the probe JSON only after verification.

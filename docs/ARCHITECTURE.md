@@ -6,7 +6,7 @@ The user's existing bot is the Lead. Setup adds a Developer and a Reviewer. Grok
 
 ## Instructions and skills
 
-Before each team task, the bootstrap runs `role read`. The result contains the active prompt, effective mode, and skill paths. Recorded version pointers show controller state. Live testing must confirm that the bot actually reads and follows that prompt.
+Before each team task, the bootstrap runs `role read`. The result contains the active prompt, effective mode, and skill paths. Recorded version pointers show controller state. Check in your account that the bot reads and follows that prompt.
 
 The prompt combines the role's contract with editable behavior. A candidate changes only the latter. Six file-backed skills ship with each release. Native private-skill registration is optional. Each edition uses the same controller and loads its own `grokteam/texts.json` for bootstrap, card, and role labels.
 

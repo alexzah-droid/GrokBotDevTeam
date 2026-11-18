@@ -62,6 +62,6 @@ To disconnect, finish work, cancel active trials with rollback, stop the watchdo
 
 ## Installation smoke test
 
-The smoke test creates a temporary Git project. The Reviewer runs the same profile on a working and deliberately broken implementation. The broken variant must fail. This checks command execution and artifact access. Native delivery still needs verification in a live pilot.
+The smoke test creates a temporary Git project. The Reviewer runs the same profile on a working and deliberately broken implementation. The broken variant must fail. This checks command execution and artifact access. Check native delivery in your account.
 
 By default, the watchdog sweeps every five seconds. `install-finish` needs a live heartbeat. After restart, use the virtual environment recorded in the bootstrap. Rebind the bootstrap if the paths move.

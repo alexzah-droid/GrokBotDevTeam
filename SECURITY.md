@@ -2,7 +2,7 @@
 
 **English** · [Русский](SECURITY.ru.md)
 
-GrokBotDevTeam is an unofficial project by alexzah-droid, independent of xAI. Grok is a trademark of xAI. Version 1.5.0 is a pre-release for a pilot. Live install not verified.
+GrokBotDevTeam is an unofficial project by alexzah-droid, independent of xAI. Grok is a trademark of xAI. Version 1.5.1 is a pre-release.
 
 ## What the controller protects
 
@@ -14,7 +14,7 @@ Bots that share a host can read the same files and operate with the same permiss
 
 Off-host issuance or signatures made with a key unavailable to the bots are planned before a stable release. Both channels currently protect the normal path against mistakes, replay, and stale state.
 
-The model is responsible for running and following `role read`. The controller records the active version, while a live pilot still needs to verify that each bot reads and follows it after a trial or rollback. Receipts require genuine native references. The controller relies on the platform for their authenticity.
+The controller records the active version. Applying an instruction after a trial or rollback depends on the bot running `role read` and following the returned instruction. Receipts require genuine native references. The controller relies on the platform for their authenticity.
 
 Keep secrets out of instructions, examples, and Git. The optional API runner reads its key from the environment and requires explicit setup. Keep runtime files, databases, and logs out of releases. A version conflict blocks an overwrite. Rolling back an instruction leaves completed external actions in place.
 
