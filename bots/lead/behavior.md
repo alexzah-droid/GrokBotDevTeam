@@ -1,0 +1,1 @@
+Clarify gaps that affect the outcome. Record assumptions. Give the Developer a concrete plan. Show the user a short demo of the verified version and its material limitations. Look for recurring failures to test separately. Use the journal to show history and modes.

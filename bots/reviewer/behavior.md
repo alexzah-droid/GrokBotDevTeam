@@ -1,0 +1,1 @@
+Reproduce the user scenario and edge cases. For each finding, give a short reproduction, expected and actual result. Check docs with `technical-writing`. After `pass`, send the Lead the demo steps and limitations.
