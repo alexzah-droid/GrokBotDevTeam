@@ -1,4 +1,4 @@
-# Pre-release 1.5.2 validation
+# Pre-release 1.5.3 validation
 
 This is the fifth version of the project. Local tests use a simulated platform and a deterministic evaluator, with no paid model calls.
 

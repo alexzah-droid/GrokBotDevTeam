@@ -27,7 +27,7 @@ The card lists key parameters separately and shows an eight-character action cod
 
 For the second installation card, describe `install` with `{"mode":"autonomous","adapter":"native","source":"https://github.com/alexzah-droid/GrokBotDevTeam"}` plus `section_id` when selected. Record the reply to that card. Pass its grant to `--actor installer --confirmation - install --mode autonomous`.
 
-In `approval`, describe `project.bind` for target `project` before using the same project file to bind. The card shows the path and full command with shell quoting for display only. A repeated binding with the same path, command, and timeout returns existing state.
+For a new or changed binding, the Lead runs `project bind` without a card in team mode `autonomous`. In `approval`, the Lead needs a single-use `project.bind` grant. Describe it for target `project` before applying the same project file. When acting as `user`, a new or changed binding requires a grant in either mode. The card shows the path and full command with shell quoting for display only. A repeated binding with the same path, command, and timeout returns existing state.
 
 ## Confirm in a terminal
 

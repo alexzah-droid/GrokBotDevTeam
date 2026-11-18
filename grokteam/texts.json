@@ -56,12 +56,14 @@
     "developer": "Developer",
     "reviewer": "Reviewer"
   },
+  "create_description": "{role} on GrokBotDevTeam {team_id}. Lead: {lead_id}. Greet briefly and say you are waiting for a setup message from the Lead. Until setup, do not ask the user for anything or report an error. After setup, follow the rule in memory.",
   "buttons": {
     "yes": "Yes, I confirm",
     "no": "No"
   },
   "card": {
     "question": "Approve “{action}” for {subject}?",
+    "task_subject": "task \"{goal}\" ({target})",
     "parameters_more": "… You can request the full parameters before answering.",
     "metric": "Target metric: {baseline:.0%} → {candidate:.0%}.",
     "changes": "Instruction changes:",

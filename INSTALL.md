@@ -4,10 +4,10 @@ Remain the user's personal bot. Keep existing memory and duties. Create only a D
 
 ## 1. Prepare the environment
 
-Get `v1.5.2` from https://github.com/alexzah-droid/GrokBotDevTeam. Use separate permanent absolute paths for `<release>`, `<venv>`, and `<runtime>` and Python 3.10+ (`<python>`).
+Get `v1.5.3` from https://github.com/alexzah-droid/GrokBotDevTeam. Use separate permanent absolute paths for `<release>`, `<venv>`, and `<runtime>` and Python 3.10+ (`<python>`).
 
 ```text
-git clone --depth 1 --branch v1.5.2 https://github.com/alexzah-droid/GrokBotDevTeam.git <release>
+git clone --depth 1 --branch v1.5.3 https://github.com/alexzah-droid/GrokBotDevTeam.git <release>
 <python> -m venv <venv>
 <venv>/bin/python -B <release>/scripts/doctor.py
 <venv>/bin/python -B <release>/scripts/release.py check
@@ -32,7 +32,7 @@ Before `--actor installer install --lead-id <lead-id>` add `--section-id <id>` i
 
 Use `--actor installer` without `--mock`. Read `bridge pending`. For `pending`: `bridge begin <op>`, native call, `bridge ack <op> --file receipt.json`. For `dispatched`, reconcile history before retrying.
 
-- **`create`.** Pass `data.name` and the saved `section_id` to `CreateAgent` if supported. Retry without a folder only on explicit failure without creation. Record actual `agent_id`, `external_ref`, and `section_id` (or `null` without a folder). Matching names alone prove nothing.
+- **`create`.** Pass `name`, `description`, and `section_id` from `data` to `CreateAgent` verbatim. Omit the folder if unsupported or retry without it on explicit failure without creation. Record actual `agent_id`, `external_ref`, and `section_id` (or `null`). Matching names alone prove nothing. After `bridge ack`, immediately `bind` this bot before creating the next one.
 - **`bind`.** Save `data.bootstrap` to the intended bot's memory. Have it read the rule and skills and run `--actor <role> role probe <role>`. Check persistence natively and repeat the check where possible. Add `"persistent":true` and `external_ref` to the verified probe.
 - **`smoke`.** Developer, then Reviewer run `--actor <role> role smoke <role>`. Add the handoff `external_ref`. If `SendToAgent` or `UpdateMemory` returns no ID, record `agent-message:<id>:<step>:<time>` or `native-memory:profile:<id>:<step>:<time>` per [formats](docs/FORMATS.md). This records an observation rather than delivery.
 

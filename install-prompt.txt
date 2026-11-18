@@ -1,5 +1,5 @@
 Install my development team from https://github.com/alexzah-droid/GrokBotDevTeam.
-Use pre-release `v1.5.2`. Read and follow `INSTALL.md` in full.
+Use pre-release `v1.5.3`. Read and follow `INSTALL.md` in full.
 Keep my existing bot as Lead with its name and existing duties.
 Create only two new bots, the Developer and the Reviewer.
 Choose the mode in the first step. Put the new bots in your folder if possible.
